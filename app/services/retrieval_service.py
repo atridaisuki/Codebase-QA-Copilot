@@ -177,6 +177,15 @@ class RetrievalService:
                 title=chunk.title,
                 section=chunk.section,
             ))
+
+        # Min-max normalize RRF scores to 0~1
+        if merged:
+            raw_scores = [c.score for c in merged]
+            lo, hi = min(raw_scores), max(raw_scores)
+            span = hi - lo if hi > lo else 1.0
+            for c in merged:
+                c.score = (c.score - lo) / span
+
         return merged
 
     def _apply_rerank(self, chunks: list[RetrievedChunk], question: str, rerank_n: int | None = None) -> list[RetrievedChunk]:

@@ -27,10 +27,15 @@ class RerankerService:
             return []
 
         pairs = [(query, chunk.content) for chunk in chunks]
-        scores = self.model.predict(pairs)
+        raw_scores = self.model.predict(pairs)
 
-        for chunk, score in zip(chunks, scores, strict=True):
-            chunk.score = float(score)
+        for chunk, raw in zip(chunks, raw_scores, strict=True):
+            chunk.score = self._sigmoid(float(raw))
 
         ranked = sorted(chunks, key=lambda c: c.score, reverse=True)
         return ranked[:top_n]
+
+    @staticmethod
+    def _sigmoid(x: float) -> float:
+        import math
+        return 1.0 / (1.0 + math.exp(-x))

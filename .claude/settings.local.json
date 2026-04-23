@@ -22,7 +22,9 @@
       "WebSearch",
       "Bash(.venv/Scripts/python:*)",
       "WebFetch(domain:download.pytorch.org)",
-      "Bash(.venv/Scripts/pip index:*)"
+      "Bash(.venv/Scripts/pip index:*)",
+      "Bash(rm:*)",
+      "Bash(HF_ENDPOINT=https://hf-mirror.com .venv/Scripts/python:*)"
     ]
   }
 }
