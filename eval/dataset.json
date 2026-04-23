@@ -1,0 +1,212 @@
+[
+  {
+    "question": "Python中is和==的区别是什么？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["内存地址", "值", "id"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "什么是GIL？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["全局解释器锁", "线程", "进程"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "三次握手的流程是什么？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["syn", "ack", "连接"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "这个项目用了哪些技术栈？",
+    "expected_sources": ["data/docs/overview.txt"],
+    "expected_keywords": ["FastAPI", "Chroma", "Claude"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Python中深拷贝和浅拷贝有什么区别？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["copy", "deepcopy", "独立"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "redis有哪几种持久化策略？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["RDB", "AOF"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "如何实现快速排序？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["partition", "pivot", "递归"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "cookie和session的区别是什么？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["浏览器", "服务端", "sessionId"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Kubernetes如何实现服务发现？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "React的虚拟DOM是怎么工作的？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "哪些隔离级别会幻读？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["READ UNCOMMITTED", "READ COMMITTED"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "实际生产中怎么保证数据库迁移安全进行？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["分阶段迁移", "避免锁表", "迁移脚本"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "redis和数据库的数据一致性如何保证？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["先更新DB", "延迟双删", "Cache Aside"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Docker和虚拟机有什么区别？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["容器", "内核", "轻量"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Dockerfile里CMD和ENTRYPOINT有什么不同？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["CMD", "ENTRYPOINT", "覆盖"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "为什么构建镜像时要先复制requirements.txt再复制代码？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["缓存", "分层", "依赖"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "git rebase和merge有什么区别？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["线性", "合并提交", "历史"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "git reset和revert有什么不同？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["回退", "反做", "历史"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "FastAPI的依赖注入是怎么工作的？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["Depends", "yield", "注入"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "ASGI和WSGI有什么区别？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["异步", "同步", "WebSocket"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Linux怎么查看当前目录下的隐藏文件？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["ls", "-a", "隐藏"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "pwd命令是干什么的？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["当前", "目录", "路径"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "redis挂了数据会丢吗？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["RDB", "AOF", "持久化"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "缓存穿透、击穿、雪崩分别是什么？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["不存在", "热点", "同时过期"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "redis为什么这么快？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["内存", "单线程", "多路复用"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "B+树索引为什么适合数据库？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["叶子节点", "范围查询", "磁盘IO"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "什么是N+1查询问题？怎么解决？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["joinedload", "N+1", "一次性加载"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "容器里的数据怎么持久化？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["Volume", "Bind Mount", "持久化"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Git的工作区、暂存区、仓库分别是什么？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["工作区", "暂存区", "commit"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "FastAPI和Flask有什么区别？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["异步", "Pydantic", "性能"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Python装饰器是什么？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["闭包", "函数", "覆盖"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "redis分布式锁怎么实现？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["SETNX", "过期时间", "Lua"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Spring Boot的自动配置原理是什么？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "MongoDB的聚合管道怎么用？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "向量数据库有哪些选择？各自适合什么场景？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["pgvector", "ChromaDB", "Milvus"],
+    "difficulty": "medium"
+  }
+]

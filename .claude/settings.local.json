@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(claude-api)",
+      "mcp__ide__getDiagnostics",
+      "Bash(\"/d/python/Codebase QA Copilot/.venv/Scripts/python.exe\":*)",
+      "Bash(python:*)",
+      "Bash(pytest:*)",
+      "Bash(PYTHONPATH=\"D:/python/Codebase QA Copilot\" pytest:*)",
+      "Read(//mnt/d/python/**)",
+      "Read(//mnt/d/python/Codebase QA Copilot/**)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(.venv/Scripts/ruff check:*)",
+      "Bash(.venv/Scripts/ruff format:*)",
+      "Bash(.venv/Scripts/mypy app:*)",
+      "Bash(.venv/Scripts/pytest:*)",
+      "Bash(make lint:*)",
+      "Bash(make typecheck:*)",
+      "Bash(make test:*)",
+      "Bash(docker:*)",
+      "Bash(pip install:*)",
+      "WebSearch",
+      "Bash(.venv/Scripts/python:*)",
+      "WebFetch(domain:download.pytorch.org)",
+      "Bash(.venv/Scripts/pip index:*)"
+    ]
+  }
+}

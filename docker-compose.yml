@@ -1,0 +1,30 @@
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    environment:
+      HOME: /app
+      HF_HOME: /app/.cache/huggingface
+      TRANSFORMERS_CACHE: /app/.cache/huggingface
+      SENTENCE_TRANSFORMERS_HOME: /app/.cache/sentence_transformers
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/docs:/app/data/docs:ro
+      - chroma_data:/app/data/chroma
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import sys, urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health'); sys.exit(0)",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
+volumes:
+  chroma_data:

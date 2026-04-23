@@ -1,0 +1,5 @@
+Codebase QA Copilot V1
+
+This assistant can ingest local Markdown and TXT documents, split them into chunks, index them in Chroma, and answer questions with cited sources.
+
+The service is built with FastAPI, sentence-transformers, Chroma, and Claude.
