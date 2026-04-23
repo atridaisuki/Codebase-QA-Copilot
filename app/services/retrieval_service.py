@@ -359,3 +359,24 @@ class RetrievalService:
             return None
         string_value = str(value).strip()
         return string_value or None
+
+    def list_sources(self) -> list[str]:
+        all_meta = self.vector_store.get_all_metadata()
+        return sorted({str(m.get("source", "unknown")) for m in all_meta if m})
+
+    def get_sections(self, source: str) -> list[dict[str, str | int | None]]:
+        all_meta = self.vector_store.get_all_metadata()
+        sections: list[dict[str, str | int | None]] = []
+        seen: set[tuple[str | None, int]] = set()
+        for m in all_meta:
+            if not m or str(m.get("source", "")) != source:
+                continue
+            section = self._safe_str(m.get("section")) or self._safe_str(m.get("title"))
+            idx = int(m.get("chunk_index", 0))
+            key = (section, idx)
+            if key in seen:
+                continue
+            seen.add(key)
+            sections.append({"section": section, "chunk_index": idx})
+        sections.sort(key=lambda s: s.get("chunk_index") or 0)
+        return sections

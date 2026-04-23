@@ -54,3 +54,7 @@ class VectorStore:
 
     def count(self) -> int:
         return self.collection.count()
+
+    def get_all_metadata(self) -> list[dict[str, Any]]:
+        result = self.collection.get(include=["metadatas"])
+        return list(result.get("metadatas") or [])

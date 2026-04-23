@@ -35,6 +35,10 @@ class Settings(BaseSettings):
     anthropic_base_url: str | None = Field(default=None)
     anthropic_model: str = Field(default="claude-opus-4-6")
 
+    # Agent settings
+    agent_max_iterations: int = Field(default=5)
+    agent_max_tokens: int = Field(default=2048)
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     @property

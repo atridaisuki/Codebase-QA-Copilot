@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -64,3 +64,31 @@ class QAResponse(BaseModel):
     answer: str
     grounded: bool
     sources: list[SourceItem]
+
+
+# ---------------------------------------------------------------------------
+# Agent schemas
+# ---------------------------------------------------------------------------
+
+
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
+class ToolStep(BaseModel):
+    tool_name: str
+    tool_input: dict[str, Any]
+    tool_result: str
+
+
+class AgentRequest(BaseModel):
+    message: str = Field(min_length=1)
+    conversation_id: str | None = None
+
+
+class AgentResponse(BaseModel):
+    conversation_id: str
+    answer: str
+    sources: list[SourceItem]
+    tool_steps: list[ToolStep]
