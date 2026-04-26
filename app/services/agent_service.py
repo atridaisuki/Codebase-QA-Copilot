@@ -57,6 +57,7 @@ class AgentService:
         all_sources: list[dict[str, Any]] = []
         tool_steps: list[ToolStep] = []
 
+        #react循环
         for _ in range(self.settings.agent_max_iterations):
             response = self.client.messages.create(
                 model=self.settings.anthropic_model,
@@ -80,12 +81,13 @@ class AgentService:
             )
             messages.append({"role": "user", "content": tool_results})
         else:
-            answer = self._extract_text(response.content)
+            answer = self._extract_text(response.content)#如果5轮下来都没结果
 
         # Persist conversation
         new_messages = messages[len(history):]
         conversation_store.append(conversation_id, new_messages)
 
+        # 去重 & 返回
         sources = self._dedupe_sources(all_sources)
         return AgentResponse(
             conversation_id=conversation_id,

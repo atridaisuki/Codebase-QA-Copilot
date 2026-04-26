@@ -26,7 +26,10 @@ def ask_question(request: QARequest) -> QAResponse:
     if not retrieval_service.has_sufficient_evidence(request.question, sources):
         return QAResponse(answer="根据当前文档无法确定。", grounded=False, sources=sources)
 
+    #context发给llm
     prompt = build_qa_prompt(question=request.question, context=context)
     answer = llm_service.generate_answer(prompt=prompt, sources=sources)
 
+    #传sources提供答案来源，实现答案可溯源
     return QAResponse(answer=answer, grounded=True, sources=sources)
+

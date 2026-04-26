@@ -20,10 +20,12 @@ class LLMService:
         if self.settings.anthropic_api_key:
             kwargs: dict[str, Any] = {"api_key": self.settings.anthropic_api_key}
             if self.settings.anthropic_base_url:
+
                 kwargs["base_url"] = self.settings.anthropic_base_url
             self.client = anthropic.Anthropic(**kwargs)
 
     def generate_answer(self, prompt: str, sources: list[SourceItem] | None = None) -> str:
+        #如果没配大模型，返回用不了，并且把top1返回作为fallback（后备）降级回答
         if not self.client:
             if sources:
                 return self._build_fallback_answer(sources)

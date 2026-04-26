@@ -36,7 +36,7 @@ class RetrievalService:
 
         #向量化问题
         query_embedding = self.embedding_service.embed_query(question)
-        #从向量库查找（召回）
+        #从向量库查找（召回），得到的是问题相关的top k
         results = self.vector_store.query(query_embedding=query_embedding, top_k=fetch_k)
 
         #检索向量
@@ -61,7 +61,7 @@ class RetrievalService:
                 )
                 for r in bm25_results
             ]
-            #融合
+            #单纯去重，算总分
             retrieved_chunks = self._rrf_merge(retrieved_chunks, bm25_chunks)
 
         #筛选，分数过滤（hybrid 模式下 RRF 分数量纲不同，跳过阈值过滤）
@@ -70,12 +70,12 @@ class RetrievalService:
         #rerank重排序（保留至少 top_k 条，避免 rerank_top_n 过小截断候选）
         rerank_n = max(self.settings.rerank_top_n, top_k)
         ranked_chunks = self._apply_rerank(retrieved_chunks, question, rerank_n=rerank_n)
-        #精选
+        #去重，合并，砍到预算内
         prompt_chunks = self._select_prompt_chunks(ranked_chunks, top_k=top_k)
 
-        #格式化，并喂给llm
+        #context 给llm看的结构体
         context = self._build_context(prompt_chunks)
-        #转成api返回的source item
+        #sources 给api返回的引用列表
         sources = [self._to_source_item(chunk) for chunk in ranked_chunks[:top_k]]
         return context, sources
 
@@ -106,7 +106,7 @@ class RetrievalService:
             return 0.0
         return max(0.0, 1.0 - float(distance))
 
-    #解析向量库里的数据，组装成retrieved chunk格式，评分，排序
+    #解析向量库里的数据，组装成retrieved chunk格式，按照评分排序
     def _parse_results(self, results: dict) -> list[RetrievedChunk]:
         documents = results.get("documents", [[]])[0]
         metadatas = results.get("metadatas", [[]])[0]
@@ -142,7 +142,7 @@ class RetrievalService:
     ) -> list[RetrievedChunk]:
         """Reciprocal Rank Fusion: score(d) = Σ weight / (k + rank)."""
         k = self.settings.rrf_k
-        vector_w = self.settings.vector_weight
+        vector_w = self.settings.vector_weight # weight权重
         bm25_w = self.settings.bm25_weight
 
         # Use (source, chunk_index) as dedup key 去重key
@@ -150,21 +150,26 @@ class RetrievalService:
         chunk_map: dict[tuple[str, int], RetrievedChunk] = {}
 
         for rank, chunk in enumerate(vector_chunks, start=1):
+            #第几个文档中的第几块，总之就是个索引
             key = (chunk.source, chunk.chunk_index)
+
+            #加上embedding的分
             scores[key] = scores.get(key, 0.0) + vector_w / (k + rank)
             if key not in chunk_map:
                 chunk_map[key] = chunk
 
         for rank, chunk in enumerate(bm25_chunks, start=1):
             key = (chunk.source, chunk.chunk_index)
+            #加上bm25的分
             scores[key] = scores.get(key, 0.0) + bm25_w / (k + rank)
+            #每个key对应一个结构体
             if key not in chunk_map:
                 chunk_map[key] = chunk
 
         sorted_keys = sorted(scores, key=lambda k_: scores[k_], reverse=True)
         merged: list[RetrievedChunk] = []
         for key in sorted_keys:
-            chunk = chunk_map[key]
+            chunk = chunk_map[key]#得到结构体
             merged.append(RetrievedChunk(
                 source=chunk.source,
                 file_type=chunk.file_type,
@@ -195,11 +200,12 @@ class RetrievalService:
         return self.reranker.rerank(query=question, chunks=chunks, top_n=top_n)
 
     def _select_prompt_chunks(self, chunks: list[RetrievedChunk], top_k: int) -> list[RetrievedChunk]:
-        #去重，合并，字符预算
+        #去重，合并相邻，字符预算
         deduped_chunks = self._dedupe_chunks(chunks)
         merged_chunks = self._merge_adjacent_chunks(deduped_chunks)
         return self._apply_context_budget(merged_chunks[:top_k])
 
+    #去重
     @staticmethod
     def _dedupe_chunks(chunks: list[RetrievedChunk]) -> list[RetrievedChunk]:
         seen: set[tuple[str, int | None, int | None, str]] = set()
@@ -214,6 +220,7 @@ class RetrievalService:
 
         return deduped
 
+    #合并相邻的切片
     def _merge_adjacent_chunks(self, chunks: list[RetrievedChunk]) -> list[RetrievedChunk]:
         if not chunks:
             return []
@@ -284,7 +291,7 @@ class RetrievalService:
             chunk_cost = len(chunk.content) + 120
             if selected and used_chars + chunk_cost > self.settings.max_context_chars:
                 break
-            if not selected and chunk_cost > self.settings.max_context_chars:
+            if not selected and chunk_cost > self.settings.max_context_chars:#如果第一个就太长了，才截断一部分下来
                 selected.append(
                     RetrievedChunk(
                         source=chunk.source,

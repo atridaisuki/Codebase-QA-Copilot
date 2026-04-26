@@ -22,6 +22,12 @@ class RerankerService:
         logger.info("Loading reranker model: %s (device=%s)", model_name, device)
         self.model = CrossEncoder(model_name, device=device)
 
+        #cross encoder是一个rerank模型，把query和answer一起传进去，返回相关值
+        #pytorch是用来进行高速的张量运算的
+        #cuda是nvidia的让gpu能够做通用计算的工具
+        #目前使用pytorch的cu128，让rerank速度加快了10倍
+        #因为cpu核心少且一个个算，gpu核心多且并行计算
+
     def rerank(self, query: str, chunks: list[RetrievedChunk], top_n: int) -> list[RetrievedChunk]:
         if not chunks:
             return []
