@@ -1,15 +1,15 @@
 # Codebase QA Copilot
 
-A minimal document QA service built with FastAPI, Chroma, local embeddings, and Claude.
+团队内部知识库智能问答系统。从零实现完整 RAG 管线（未使用 LangChain），支持文档摄入、混合检索、重排序和基于证据的问答。
+
+Built with FastAPI, Chroma, BGE embeddings, BM25, CrossEncoder, and Claude.
 
 ## Features
 
-- ingest local Markdown and TXT files
-- split content with paragraph-aware chunking and long-paragraph fallback windows
-- store embeddings in Chroma with richer chunk metadata
-- retrieve relevant chunks with score filtering, dedupe, merge, and context budgeting
-- answer with source citations and richer source metadata
-- stay grounded in indexed documents and return `根据当前文档无法确定。` when retrieval evidence is weak
+- 段落感知分块 → BGE 中文向量化 → Chroma 向量检索 + BM25 关键词检索 → RRF 融合 → CrossEncoder 重排序
+- 多路检索分数归一化（min-max + sigmoid）+ 阈值调优，Grounding 0.46 → 0.88
+- 67 条评测集（含负样本、hard 难度）做消融实验，量化每个组件贡献
+- 证据不足时拒答（`根据当前文档无法确定。`），7 条负样本全部正确拒答
 
 ## Project layout
 
