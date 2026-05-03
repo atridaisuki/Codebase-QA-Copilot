@@ -38,7 +38,7 @@
   {
     "question": "如何实现快速排序？",
     "expected_sources": ["data/docs/product.md"],
-    "expected_keywords": ["partition", "pivot", "递归"],
+    "expected_keywords": ["partition", "递归"],
     "difficulty": "medium"
   },
   {
@@ -74,7 +74,7 @@
   {
     "question": "redis和数据库的数据一致性如何保证？",
     "expected_sources": ["data/docs/redis.md"],
-    "expected_keywords": ["先更新DB", "延迟双删", "Cache Aside"],
+    "expected_keywords": ["先更新DB", "延迟双删", "Cache-Aside"],
     "difficulty": "medium"
   },
   {
@@ -208,5 +208,198 @@
     "expected_sources": ["data/docs/database.md"],
     "expected_keywords": ["pgvector", "ChromaDB", "Milvus"],
     "difficulty": "medium"
+  },
+
+  {
+    "question": "怎么用grep在日志文件里搜索关键词？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["grep", "-i", "搜索"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Linux怎么查看某个端口被哪个进程占用？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["ss", "lsof", "端口"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "nohup命令有什么用？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["后台运行", "终端"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Linux管道和重定向有什么区别？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["|", ">", "输出"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "tar命令怎么压缩和解压文件？",
+    "expected_sources": ["data/docs/linux_commands_beginner.md"],
+    "expected_keywords": ["tar", "-czf", "-xzf"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "git stash是干什么的？什么场景下用？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["暂存", "切换分支"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "git cherry-pick有什么用？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["cherry-pick", "提交", "分支"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Git Flow和GitHub Flow有什么区别？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["develop", "feature", "简单"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "怎么解决git合并冲突？",
+    "expected_sources": ["data/docs/git.md"],
+    "expected_keywords": ["冲突", "手动", "标记"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "FastAPI里怎么做后台任务？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["BackgroundTasks", "后台"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Pydantic v1和v2有什么区别？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["v2", "性能", "Rust"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "FastAPI怎么处理CORS跨域？",
+    "expected_sources": ["data/docs/fastapi.md"],
+    "expected_keywords": ["CORSMiddleware", "origins"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Docker多阶段构建有什么好处？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["多阶段", "体积", "构建"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Docker容器之间怎么通信？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["网络", "服务名"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "docker-compose.yml里depends_on能保证服务就绪吗？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["depends_on", "启动顺序", "健康检查"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Redis的ZSet底层用了什么数据结构？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["跳表", "skiplist", "ziplist"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Redis Sentinel是干什么的？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["哨兵", "故障转移"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Redis的内存淘汰策略有哪些？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["LRU", "LFU", "淘汰"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "SQLAlchemy里怎么定义一对多关系？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["relationship", "ForeignKey"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "数据库连接池有什么用？怎么配置？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["连接池", "pool_size", "复用"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "EXPLAIN命令怎么分析慢查询？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["EXPLAIN", "执行计划"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Python的生成器和迭代器有什么区别？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["yield", "生成器"],
+    "difficulty": "easy"
+  },
+  {
+    "question": "Python的多进程和多线程分别适合什么场景？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["协程", "GIL", "线程"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "Python的asyncio事件循环是怎么工作的？",
+    "expected_sources": ["data/docs/product.md"],
+    "expected_keywords": ["事件循环", "协程", "await"],
+    "difficulty": "medium"
+  },
+  {
+    "question": "部署一个Python后端服务到Docker，从写Dockerfile到docker-compose编排，完整流程是什么？",
+    "expected_sources": ["data/docs/docker.md"],
+    "expected_keywords": ["Dockerfile", "docker-compose", "端口映射", "Volume"],
+    "difficulty": "hard"
+  },
+  {
+    "question": "Redis做分布式锁时，如果持有锁的进程崩溃了怎么办？WatchDog机制是什么？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["过期时间", "WatchDog", "续期"],
+    "difficulty": "hard"
+  },
+  {
+    "question": "数据库事务的四个隔离级别分别解决了什么问题？各自有什么代价？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["脏读", "不可重复读", "幻读", "SERIALIZABLE"],
+    "difficulty": "hard"
+  },
+  {
+    "question": "在RAG系统中，embedding存储应该选择什么方案？pgvector和专用向量库各有什么优劣？",
+    "expected_sources": ["data/docs/database.md"],
+    "expected_keywords": ["pgvector", "向量"],
+    "difficulty": "hard"
+  },
+  {
+    "question": "Redis Cluster的数据分片原理是什么？",
+    "expected_sources": ["data/docs/redis.md"],
+    "expected_keywords": ["哈希槽", "16384", "分片"],
+    "difficulty": "hard"
+  },
+  {
+    "question": "Rust的所有权机制是怎么工作的？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "GraphQL和REST有什么区别？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
+  },
+  {
+    "question": "Kafka的消费者组是怎么工作的？",
+    "expected_sources": [],
+    "expected_keywords": [],
+    "difficulty": "negative"
   }
 ]

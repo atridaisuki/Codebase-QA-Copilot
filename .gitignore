@@ -7,3 +7,4 @@ data/chroma/
 data/bm25_index.pkl
 htmlcov/
 .env
+docs/

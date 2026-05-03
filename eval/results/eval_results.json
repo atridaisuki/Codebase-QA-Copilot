@@ -1,14 +1,14 @@
 [
   {
     "config": "vector_only",
-    "total": 35,
-    "recall_at_3": 0.9355,
-    "recall_at_5": 0.9355,
-    "mrr": 0.9194,
-    "precision_at_3": 0.7903,
-    "keyword_hit_rate": 0.8901,
-    "grounding_accuracy": 0.4286,
-    "elapsed_seconds": 0.57,
+    "total": 67,
+    "recall_at_3": 0.9667,
+    "recall_at_5": 0.9667,
+    "mrr": 0.9389,
+    "precision_at_3": 0.8417,
+    "keyword_hit_rate": 0.8698,
+    "grounding_accuracy": 0.4627,
+    "elapsed_seconds": 0.87,
     "cases": [
       {
         "question": "Python中is和==的区别是什么？",
@@ -130,8 +130,7 @@
           "递归"
         ],
         "keyword_misses": [
-          "partition",
-          "pivot"
+          "partition"
         ]
       },
       {
@@ -231,7 +230,7 @@
         "keyword_hits": [
           "先更新DB",
           "延迟双删",
-          "Cache Aside"
+          "Cache-Aside"
         ],
         "keyword_misses": []
       },
@@ -643,25 +642,605 @@
           "Milvus"
         ],
         "keyword_misses": []
+      },
+      {
+        "question": "怎么用grep在日志文件里搜索关键词？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "grep",
+          "-i",
+          "搜索"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux怎么查看某个端口被哪个进程占用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "ss",
+          "lsof",
+          "端口"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "nohup命令有什么用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "后台运行",
+          "终端"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux管道和重定向有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/redis.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "|",
+          ">",
+          "输出"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "tar命令怎么压缩和解压文件？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "tar",
+          "-czf",
+          "-xzf"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "git stash是干什么的？什么场景下用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "暂存"
+        ],
+        "keyword_misses": [
+          "切换分支"
+        ]
+      },
+      {
+        "question": "git cherry-pick有什么用？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "cherry-pick",
+          "提交",
+          "分支"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Git Flow和GitHub Flow有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "develop",
+          "feature",
+          "简单"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "怎么解决git合并冲突？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "冲突",
+          "手动",
+          "标记"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI里怎么做后台任务？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "BackgroundTasks",
+          "后台"
+        ]
+      },
+      {
+        "question": "Pydantic v1和v2有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "v2",
+          "性能",
+          "Rust"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI怎么处理CORS跨域？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "CORSMiddleware",
+          "origins"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker多阶段构建有什么好处？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "多阶段",
+          "体积",
+          "构建"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker容器之间怎么通信？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "网络",
+          "服务名"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "docker-compose.yml里depends_on能保证服务就绪吗？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "depends_on",
+          "启动顺序",
+          "健康检查"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis的ZSet底层用了什么数据结构？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "跳表",
+          "skiplist",
+          "ziplist"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Sentinel是干什么的？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "哨兵"
+        ],
+        "keyword_misses": [
+          "故障转移"
+        ]
+      },
+      {
+        "question": "Redis的内存淘汰策略有哪些？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "LRU",
+          "LFU",
+          "淘汰"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "SQLAlchemy里怎么定义一对多关系？",
+        "difficulty": "easy",
+        "hit_at": 2,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "relationship",
+          "ForeignKey"
+        ]
+      },
+      {
+        "question": "数据库连接池有什么用？怎么配置？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "连接池",
+          "pool_size",
+          "复用"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "EXPLAIN命令怎么分析慢查询？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "EXPLAIN",
+          "执行计划"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Python的生成器和迭代器有什么区别？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "生成器"
+        ],
+        "keyword_misses": [
+          "yield"
+        ]
+      },
+      {
+        "question": "Python的多进程和多线程分别适合什么场景？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/product.md",
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "协程",
+          "线程"
+        ],
+        "keyword_misses": [
+          "GIL"
+        ]
+      },
+      {
+        "question": "Python的asyncio事件循环是怎么工作的？",
+        "difficulty": "medium",
+        "hit_at": 3,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "事件循环",
+          "await"
+        ],
+        "keyword_misses": [
+          "协程"
+        ]
+      },
+      {
+        "question": "部署一个Python后端服务到Docker，从写Dockerfile到docker-compose编排，完整流程是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "Dockerfile",
+          "端口映射",
+          "Volume"
+        ],
+        "keyword_misses": [
+          "docker-compose"
+        ]
+      },
+      {
+        "question": "Redis做分布式锁时，如果持有锁的进程崩溃了怎么办？WatchDog机制是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "过期时间",
+          "WatchDog",
+          "续期"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "数据库事务的四个隔离级别分别解决了什么问题？各自有什么代价？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "脏读",
+          "不可重复读",
+          "幻读",
+          "SERIALIZABLE"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "在RAG系统中，embedding存储应该选择什么方案？pgvector和专用向量库各有什么优劣？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "pgvector",
+          "向量"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Cluster的数据分片原理是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "哈希槽",
+          "16384",
+          "分片"
+        ]
+      },
+      {
+        "question": "Rust的所有权机制是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "GraphQL和REST有什么区别？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "Kafka的消费者组是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [],
+        "keyword_hits": [],
+        "keyword_misses": []
       }
     ]
   },
   {
     "config": "hybrid",
-    "total": 35,
-    "recall_at_3": 0.9677,
-    "recall_at_5": 0.9677,
-    "mrr": 0.9355,
-    "precision_at_3": 0.7849,
-    "keyword_hit_rate": 0.9231,
-    "grounding_accuracy": 0.4857,
-    "elapsed_seconds": 0.79,
+    "total": 67,
+    "recall_at_3": 0.9833,
+    "recall_at_5": 0.9833,
+    "mrr": 0.9556,
+    "precision_at_3": 0.8167,
+    "keyword_hit_rate": 0.8876,
+    "grounding_accuracy": 0.8955,
+    "elapsed_seconds": 1.15,
     "cases": [
       {
         "question": "Python中is和==的区别是什么？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
@@ -680,13 +1259,13 @@
         "question": "什么是GIL？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
-          "data/docs/linux_commands_beginner.md",
           "data/docs/redis.md",
-          "data/docs/product.md",
-          "data/docs/redis.md"
+          "data/docs/redis.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/product.md"
         ],
         "keyword_hits": [
           "全局解释器锁",
@@ -702,10 +1281,10 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/product.md",
           "data/docs/redis.md",
-          "data/docs/database.md"
+          "data/docs/database.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
         ],
         "keyword_hits": [
           "syn",
@@ -721,10 +1300,10 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/redis.md",
-          "data/docs/redis.md",
           "data/docs/product.md",
-          "data/docs/linux_commands_beginner.md",
-          "data/docs/redis.md"
+          "data/docs/redis.md",
+          "data/docs/git.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "FastAPI"
@@ -738,13 +1317,13 @@
         "question": "Python中深拷贝和浅拷贝有什么区别？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
           "data/docs/product.md",
           "data/docs/product.md",
-          "data/docs/database.md"
+          "data/docs/product.md"
         ],
         "keyword_hits": [
           "copy",
@@ -760,10 +1339,10 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
           "data/docs/product.md",
-          "data/docs/redis.md",
-          "data/docs/redis.md",
-          "data/docs/product.md"
+          "data/docs/redis.md"
         ],
         "keyword_hits": [
           "RDB",
@@ -775,33 +1354,32 @@
         "question": "如何实现快速排序？",
         "difficulty": "medium",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
+          "data/docs/database.md",
           "data/docs/product.md",
-          "data/docs/redis.md",
-          "data/docs/database.md"
+          "data/docs/product.md"
         ],
         "keyword_hits": [
           "递归"
         ],
         "keyword_misses": [
-          "partition",
-          "pivot"
+          "partition"
         ]
       },
       {
         "question": "cookie和session的区别是什么？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
-          "data/docs/product.md",
           "data/docs/redis.md",
-          "data/docs/product.md",
-          "data/docs/database.md"
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
         ],
         "keyword_hits": [
           "浏览器",
@@ -814,12 +1392,12 @@
         "question": "Kubernetes如何实现服务发现？",
         "difficulty": "negative",
         "hit_at": null,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
-          "data/docs/linux_commands_beginner.md",
           "data/docs/database.md",
-          "data/docs/redis.md",
-          "data/docs/redis.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/docker.md",
+          "data/docs/fastapi.md",
           "data/docs/docker.md"
         ],
         "keyword_hits": [],
@@ -834,7 +1412,7 @@
           "data/docs/docker.md",
           "data/docs/docker.md",
           "data/docs/docker.md",
-          "data/docs/git.md",
+          "data/docs/docker.md",
           "data/docs/docker.md"
         ],
         "keyword_hits": [],
@@ -844,12 +1422,12 @@
         "question": "哪些隔离级别会幻读？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/database.md",
           "data/docs/database.md",
           "data/docs/redis.md",
-          "data/docs/docker.md",
+          "data/docs/database.md",
           "data/docs/database.md"
         ],
         "keyword_hits": [
@@ -867,8 +1445,8 @@
           "data/docs/database.md",
           "data/docs/database.md",
           "data/docs/database.md",
-          "data/docs/database.md",
-          "data/docs/redis.md"
+          "data/docs/redis.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "分阶段迁移",
@@ -880,28 +1458,27 @@
       {
         "question": "redis和数据库的数据一致性如何保证？",
         "difficulty": "medium",
-        "hit_at": 2,
+        "hit_at": 1,
         "grounded": true,
         "returned_sources": [
-          "data/docs/database.md",
           "data/docs/redis.md",
-          "data/docs/product.md",
+          "data/docs/redis.md",
+          "data/docs/database.md",
           "data/docs/redis.md",
           "data/docs/redis.md"
         ],
         "keyword_hits": [
           "先更新DB",
-          "延迟双删"
+          "延迟双删",
+          "Cache-Aside"
         ],
-        "keyword_misses": [
-          "Cache Aside"
-        ]
+        "keyword_misses": []
       },
       {
         "question": "Docker和虚拟机有什么区别？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/docker.md",
           "data/docs/docker.md",
@@ -920,11 +1497,11 @@
         "question": "Dockerfile里CMD和ENTRYPOINT有什么不同？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/docker.md",
-          "data/docs/docker.md",
           "data/docs/linux_commands_beginner.md",
+          "data/docs/docker.md",
           "data/docs/docker.md",
           "data/docs/docker.md"
         ],
@@ -982,7 +1559,7 @@
           "data/docs/git.md",
           "data/docs/git.md",
           "data/docs/git.md",
-          "data/docs/product.md",
+          "data/docs/git.md",
           "data/docs/git.md"
         ],
         "keyword_hits": [
@@ -996,12 +1573,12 @@
         "question": "FastAPI的依赖注入是怎么工作的？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/fastapi.md",
-          "data/docs/redis.md",
           "data/docs/fastapi.md",
-          "data/docs/docker.md",
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
           "data/docs/fastapi.md"
         ],
         "keyword_hits": [
@@ -1014,14 +1591,14 @@
       {
         "question": "ASGI和WSGI有什么区别？",
         "difficulty": "easy",
-        "hit_at": 1,
-        "grounded": false,
+        "hit_at": 2,
+        "grounded": true,
         "returned_sources": [
+          "data/docs/product.md",
           "data/docs/fastapi.md",
           "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/docker.md"
+          "data/docs/git.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "异步",
@@ -1040,7 +1617,7 @@
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
-          "data/docs/redis.md"
+          "data/docs/linux_commands_beginner.md"
         ],
         "keyword_hits": [
           "ls",
@@ -1053,7 +1630,7 @@
         "question": "pwd命令是干什么的？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
@@ -1075,9 +1652,9 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/redis.md",
-          "data/docs/git.md",
           "data/docs/redis.md",
-          "data/docs/product.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
           "data/docs/redis.md"
         ],
         "keyword_hits": [
@@ -1097,7 +1674,7 @@
           "data/docs/redis.md",
           "data/docs/database.md",
           "data/docs/database.md",
-          "data/docs/redis.md"
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "不存在",
@@ -1110,13 +1687,13 @@
         "question": "redis为什么这么快？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/redis.md",
-          "data/docs/docker.md"
+          "data/docs/redis.md"
         ],
         "keyword_hits": [
           "内存",
@@ -1129,13 +1706,13 @@
         "question": "B+树索引为什么适合数据库？",
         "difficulty": "medium",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
-          "data/docs/database.md",
           "data/docs/database.md",
           "data/docs/redis.md",
           "data/docs/product.md",
-          "data/docs/docker.md"
+          "data/docs/database.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "叶子节点",
@@ -1153,28 +1730,29 @@
         "returned_sources": [
           "data/docs/database.md",
           "data/docs/database.md",
-          "data/docs/database.md",
-          "data/docs/database.md",
-          "data/docs/product.md"
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/linux_commands_beginner.md"
         ],
         "keyword_hits": [
           "joinedload",
-          "N+1",
-          "一次性加载"
+          "N+1"
         ],
-        "keyword_misses": []
+        "keyword_misses": [
+          "一次性加载"
+        ]
       },
       {
         "question": "容器里的数据怎么持久化？",
         "difficulty": "medium",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/docker.md",
           "data/docs/docker.md",
           "data/docs/redis.md",
           "data/docs/redis.md",
-          "data/docs/redis.md"
+          "data/docs/docker.md"
         ],
         "keyword_hits": [
           "Volume",
@@ -1206,12 +1784,12 @@
         "question": "FastAPI和Flask有什么区别？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/fastapi.md",
-          "data/docs/docker.md",
           "data/docs/fastapi.md",
-          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/docker.md",
           "data/docs/redis.md"
         ],
         "keyword_hits": [
@@ -1225,13 +1803,13 @@
         "question": "Python装饰器是什么？",
         "difficulty": "easy",
         "hit_at": 1,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
+          "data/docs/docker.md",
           "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/docker.md"
+          "data/docs/product.md"
         ],
         "keyword_hits": [
           "闭包",
@@ -1243,33 +1821,34 @@
       {
         "question": "redis分布式锁怎么实现？",
         "difficulty": "medium",
-        "hit_at": 2,
+        "hit_at": 1,
         "grounded": true,
         "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
           "data/docs/product.md",
-          "data/docs/redis.md",
-          "data/docs/redis.md",
-          "data/docs/redis.md",
           "data/docs/redis.md"
         ],
         "keyword_hits": [
-          "SETNX",
           "过期时间",
           "Lua"
         ],
-        "keyword_misses": []
+        "keyword_misses": [
+          "SETNX"
+        ]
       },
       {
         "question": "Spring Boot的自动配置原理是什么？",
         "difficulty": "negative",
         "hit_at": null,
-        "grounded": false,
+        "grounded": true,
         "returned_sources": [
-          "data/docs/git.md",
-          "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/git.md",
-          "data/docs/docker.md"
+          "data/docs/docker.md",
+          "data/docs/git.md",
+          "data/docs/redis.md"
         ],
         "keyword_hits": [],
         "keyword_misses": []
@@ -1281,10 +1860,10 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/docker.md",
-          "data/docs/linux_commands_beginner.md",
           "data/docs/docker.md",
           "data/docs/redis.md",
-          "data/docs/redis.md"
+          "data/docs/git.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [],
         "keyword_misses": []
@@ -1303,24 +1882,617 @@
         ],
         "keyword_hits": [
           "pgvector",
+          "ChromaDB",
           "Milvus"
         ],
+        "keyword_misses": []
+      },
+      {
+        "question": "怎么用grep在日志文件里搜索关键词？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "grep",
+          "-i",
+          "搜索"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux怎么查看某个端口被哪个进程占用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "ss",
+          "lsof",
+          "端口"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "nohup命令有什么用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "后台运行",
+          "终端"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux管道和重定向有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/redis.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "|",
+          ">",
+          "输出"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "tar命令怎么压缩和解压文件？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "tar",
+          "-czf",
+          "-xzf"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "git stash是干什么的？什么场景下用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "暂存"
+        ],
         "keyword_misses": [
-          "ChromaDB"
+          "切换分支"
         ]
+      },
+      {
+        "question": "git cherry-pick有什么用？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "cherry-pick",
+          "提交",
+          "分支"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Git Flow和GitHub Flow有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "develop",
+          "feature",
+          "简单"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "怎么解决git合并冲突？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "冲突",
+          "手动",
+          "标记"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI里怎么做后台任务？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "BackgroundTasks",
+          "后台"
+        ]
+      },
+      {
+        "question": "Pydantic v1和v2有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "v2",
+          "性能",
+          "Rust"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI怎么处理CORS跨域？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "CORSMiddleware",
+          "origins"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker多阶段构建有什么好处？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "多阶段",
+          "体积",
+          "构建"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker容器之间怎么通信？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "网络",
+          "服务名"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "docker-compose.yml里depends_on能保证服务就绪吗？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "depends_on",
+          "启动顺序",
+          "健康检查"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis的ZSet底层用了什么数据结构？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "跳表",
+          "skiplist",
+          "ziplist"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Sentinel是干什么的？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "哨兵"
+        ],
+        "keyword_misses": [
+          "故障转移"
+        ]
+      },
+      {
+        "question": "Redis的内存淘汰策略有哪些？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "LRU",
+          "LFU",
+          "淘汰"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "SQLAlchemy里怎么定义一对多关系？",
+        "difficulty": "easy",
+        "hit_at": 2,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "relationship",
+          "ForeignKey"
+        ]
+      },
+      {
+        "question": "数据库连接池有什么用？怎么配置？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "连接池",
+          "pool_size",
+          "复用"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "EXPLAIN命令怎么分析慢查询？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "EXPLAIN",
+          "执行计划"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Python的生成器和迭代器有什么区别？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "生成器"
+        ],
+        "keyword_misses": [
+          "yield"
+        ]
+      },
+      {
+        "question": "Python的多进程和多线程分别适合什么场景？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/product.md",
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "协程",
+          "线程"
+        ],
+        "keyword_misses": [
+          "GIL"
+        ]
+      },
+      {
+        "question": "Python的asyncio事件循环是怎么工作的？",
+        "difficulty": "medium",
+        "hit_at": 3,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "事件循环",
+          "await"
+        ],
+        "keyword_misses": [
+          "协程"
+        ]
+      },
+      {
+        "question": "部署一个Python后端服务到Docker，从写Dockerfile到docker-compose编排，完整流程是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "Dockerfile",
+          "端口映射",
+          "Volume"
+        ],
+        "keyword_misses": [
+          "docker-compose"
+        ]
+      },
+      {
+        "question": "Redis做分布式锁时，如果持有锁的进程崩溃了怎么办？WatchDog机制是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "过期时间",
+          "WatchDog",
+          "续期"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "数据库事务的四个隔离级别分别解决了什么问题？各自有什么代价？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "脏读",
+          "不可重复读",
+          "幻读",
+          "SERIALIZABLE"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "在RAG系统中，embedding存储应该选择什么方案？pgvector和专用向量库各有什么优劣？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "pgvector",
+          "向量"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Cluster的数据分片原理是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "哈希槽",
+          "16384",
+          "分片"
+        ]
+      },
+      {
+        "question": "Rust的所有权机制是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "GraphQL和REST有什么区别？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "Kafka的消费者组是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
       }
     ]
   },
   {
     "config": "hybrid+rerank",
-    "total": 35,
-    "recall_at_3": 0.9677,
-    "recall_at_5": 0.9677,
-    "mrr": 0.9086,
-    "precision_at_3": 0.8172,
-    "keyword_hit_rate": 0.9341,
-    "grounding_accuracy": 0.9429,
-    "elapsed_seconds": 4.63,
+    "total": 67,
+    "recall_at_3": 0.95,
+    "recall_at_5": 0.9833,
+    "mrr": 0.9306,
+    "precision_at_3": 0.7944,
+    "keyword_hit_rate": 0.8876,
+    "grounding_accuracy": 0.8806,
+    "elapsed_seconds": 5.56,
     "cases": [
       {
         "question": "Python中is和==的区别是什么？",
@@ -1349,8 +2521,8 @@
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/docker.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/redis.md",
           "data/docs/product.md"
         ],
         "keyword_hits": [
@@ -1368,9 +2540,9 @@
         "returned_sources": [
           "data/docs/product.md",
           "data/docs/product.md",
-          "data/docs/database.md",
           "data/docs/redis.md",
-          "data/docs/product.md"
+          "data/docs/product.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "syn",
@@ -1389,11 +2561,12 @@
           "data/docs/database.md",
           "data/docs/git.md",
           "data/docs/redis.md",
-          "data/docs/linux_commands_beginner.md"
+          "data/docs/redis.md"
         ],
-        "keyword_hits": [],
+        "keyword_hits": [
+          "FastAPI"
+        ],
         "keyword_misses": [
-          "FastAPI",
           "Chroma",
           "Claude"
         ]
@@ -1420,11 +2593,11 @@
       {
         "question": "redis有哪几种持久化策略？",
         "difficulty": "easy",
-        "hit_at": 3,
+        "hit_at": 2,
         "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
-          "data/docs/product.md",
+          "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/redis.md"
@@ -1445,11 +2618,10 @@
           "data/docs/product.md",
           "data/docs/product.md",
           "data/docs/product.md",
-          "data/docs/product.md"
+          "data/docs/database.md"
         ],
         "keyword_hits": [
-          "partition",
-          "pivot"
+          "partition"
         ],
         "keyword_misses": [
           "递归"
@@ -1462,10 +2634,10 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/product.md",
-          "data/docs/docker.md",
-          "data/docs/redis.md"
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "浏览器",
@@ -1481,10 +2653,10 @@
         "grounded": false,
         "returned_sources": [
           "data/docs/linux_commands_beginner.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
           "data/docs/redis.md",
-          "data/docs/linux_commands_beginner.md",
-          "data/docs/database.md",
-          "data/docs/docker.md"
+          "data/docs/fastapi.md"
         ],
         "keyword_hits": [],
         "keyword_misses": []
@@ -1499,7 +2671,7 @@
           "data/docs/docker.md",
           "data/docs/docker.md",
           "data/docs/docker.md",
-          "data/docs/docker.md"
+          "data/docs/product.md"
         ],
         "keyword_hits": [],
         "keyword_misses": []
@@ -1512,9 +2684,9 @@
         "returned_sources": [
           "data/docs/database.md",
           "data/docs/database.md",
-          "data/docs/docker.md",
           "data/docs/redis.md",
-          "data/docs/redis.md"
+          "data/docs/redis.md",
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "READ UNCOMMITTED",
@@ -1532,7 +2704,7 @@
           "data/docs/database.md",
           "data/docs/database.md",
           "data/docs/database.md",
-          "data/docs/docker.md"
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "分阶段迁移",
@@ -1551,15 +2723,14 @@
           "data/docs/database.md",
           "data/docs/redis.md",
           "data/docs/redis.md",
-          "data/docs/product.md"
+          "data/docs/redis.md"
         ],
         "keyword_hits": [
           "先更新DB",
-          "延迟双删"
+          "延迟双删",
+          "Cache-Aside"
         ],
-        "keyword_misses": [
-          "Cache Aside"
-        ]
+        "keyword_misses": []
       },
       {
         "question": "Docker和虚拟机有什么区别？",
@@ -1683,9 +2854,9 @@
         "returned_sources": [
           "data/docs/fastapi.md",
           "data/docs/product.md",
-          "data/docs/docker.md",
-          "data/docs/product.md",
-          "data/docs/docker.md"
+          "data/docs/git.md",
+          "data/docs/database.md",
+          "data/docs/git.md"
         ],
         "keyword_hits": [
           "异步",
@@ -1703,7 +2874,7 @@
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
-          "data/docs/docker.md",
+          "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md"
         ],
         "keyword_hits": [
@@ -1722,7 +2893,7 @@
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
           "data/docs/linux_commands_beginner.md",
-          "data/docs/linux_commands_beginner.md",
+          "data/docs/redis.md",
           "data/docs/linux_commands_beginner.md"
         ],
         "keyword_hits": [
@@ -1735,21 +2906,22 @@
       {
         "question": "redis挂了数据会丢吗？",
         "difficulty": "medium",
-        "hit_at": 2,
-        "grounded": true,
+        "hit_at": 1,
+        "grounded": false,
         "returned_sources": [
-          "data/docs/product.md",
-          "data/docs/redis.md",
           "data/docs/redis.md",
           "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
           "data/docs/redis.md"
         ],
         "keyword_hits": [
-          "RDB",
-          "AOF",
           "持久化"
         ],
-        "keyword_misses": []
+        "keyword_misses": [
+          "RDB",
+          "AOF"
+        ]
       },
       {
         "question": "缓存穿透、击穿、雪崩分别是什么？",
@@ -1759,7 +2931,7 @@
         "returned_sources": [
           "data/docs/redis.md",
           "data/docs/redis.md",
-          "data/docs/redis.md",
+          "data/docs/database.md",
           "data/docs/database.md",
           "data/docs/redis.md"
         ],
@@ -1799,7 +2971,7 @@
           "data/docs/database.md",
           "data/docs/redis.md",
           "data/docs/product.md",
-          "data/docs/product.md"
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "叶子节点",
@@ -1816,17 +2988,18 @@
         "grounded": true,
         "returned_sources": [
           "data/docs/database.md",
-          "data/docs/database.md",
+          "data/docs/product.md",
           "data/docs/database.md",
           "data/docs/product.md",
-          "data/docs/database.md"
+          "data/docs/linux_commands_beginner.md"
         ],
         "keyword_hits": [
           "joinedload",
-          "N+1",
-          "一次性加载"
+          "N+1"
         ],
-        "keyword_misses": []
+        "keyword_misses": [
+          "一次性加载"
+        ]
       },
       {
         "question": "容器里的数据怎么持久化？",
@@ -1836,9 +3009,9 @@
         "returned_sources": [
           "data/docs/docker.md",
           "data/docs/docker.md",
+          "data/docs/redis.md",
           "data/docs/docker.md",
-          "data/docs/product.md",
-          "data/docs/redis.md"
+          "data/docs/database.md"
         ],
         "keyword_hits": [
           "Volume",
@@ -1874,8 +3047,8 @@
         "returned_sources": [
           "data/docs/fastapi.md",
           "data/docs/docker.md",
-          "data/docs/product.md",
-          "data/docs/product.md",
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
           "data/docs/fastapi.md"
         ],
         "keyword_hits": [
@@ -1895,7 +3068,7 @@
           "data/docs/product.md",
           "data/docs/product.md",
           "data/docs/product.md",
-          "data/docs/product.md"
+          "data/docs/docker.md"
         ],
         "keyword_hits": [
           "闭包",
@@ -1931,9 +3104,9 @@
         "returned_sources": [
           "data/docs/git.md",
           "data/docs/redis.md",
+          "data/docs/docker.md",
           "data/docs/redis.md",
-          "data/docs/redis.md",
-          "data/docs/product.md"
+          "data/docs/git.md"
         ],
         "keyword_hits": [],
         "keyword_misses": []
@@ -1944,10 +3117,10 @@
         "hit_at": null,
         "grounded": false,
         "returned_sources": [
-          "data/docs/linux_commands_beginner.md",
           "data/docs/git.md",
-          "data/docs/database.md",
+          "data/docs/docker.md",
           "data/docs/redis.md",
+          "data/docs/database.md",
           "data/docs/docker.md"
         ],
         "keyword_hits": [],
@@ -1970,6 +3143,601 @@
           "ChromaDB",
           "Milvus"
         ],
+        "keyword_misses": []
+      },
+      {
+        "question": "怎么用grep在日志文件里搜索关键词？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "grep",
+          "-i",
+          "搜索"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux怎么查看某个端口被哪个进程占用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "ss",
+          "lsof",
+          "端口"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "nohup命令有什么用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "后台运行",
+          "终端"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Linux管道和重定向有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "|",
+          ">",
+          "输出"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "tar命令怎么压缩和解压文件？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "tar",
+          "-czf",
+          "-xzf"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "git stash是干什么的？什么场景下用？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "暂存"
+        ],
+        "keyword_misses": [
+          "切换分支"
+        ]
+      },
+      {
+        "question": "git cherry-pick有什么用？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "cherry-pick",
+          "提交",
+          "分支"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Git Flow和GitHub Flow有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "develop",
+          "feature",
+          "简单"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "怎么解决git合并冲突？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md",
+          "data/docs/git.md"
+        ],
+        "keyword_hits": [
+          "冲突",
+          "手动",
+          "标记"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI里怎么做后台任务？",
+        "difficulty": "easy",
+        "hit_at": 4,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "后台"
+        ],
+        "keyword_misses": [
+          "BackgroundTasks"
+        ]
+      },
+      {
+        "question": "Pydantic v1和v2有什么区别？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "v2",
+          "性能",
+          "Rust"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "FastAPI怎么处理CORS跨域？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
+          "data/docs/database.md",
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "CORSMiddleware",
+          "origins"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker多阶段构建有什么好处？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "多阶段",
+          "体积",
+          "构建"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Docker容器之间怎么通信？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "网络",
+          "服务名"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "docker-compose.yml里depends_on能保证服务就绪吗？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/redis.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "depends_on",
+          "启动顺序",
+          "健康检查"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis的ZSet底层用了什么数据结构？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "跳表",
+          "skiplist",
+          "ziplist"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Sentinel是干什么的？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "哨兵"
+        ],
+        "keyword_misses": [
+          "故障转移"
+        ]
+      },
+      {
+        "question": "Redis的内存淘汰策略有哪些？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "LRU",
+          "LFU",
+          "淘汰"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "SQLAlchemy里怎么定义一对多关系？",
+        "difficulty": "easy",
+        "hit_at": 2,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "relationship",
+          "ForeignKey"
+        ]
+      },
+      {
+        "question": "数据库连接池有什么用？怎么配置？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/docker.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "连接池",
+          "pool_size",
+          "复用"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "EXPLAIN命令怎么分析慢查询？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md",
+          "data/docs/linux_commands_beginner.md"
+        ],
+        "keyword_hits": [
+          "EXPLAIN"
+        ],
+        "keyword_misses": [
+          "执行计划"
+        ]
+      },
+      {
+        "question": "Python的生成器和迭代器有什么区别？",
+        "difficulty": "easy",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "生成器"
+        ],
+        "keyword_misses": [
+          "yield"
+        ]
+      },
+      {
+        "question": "Python的多进程和多线程分别适合什么场景？",
+        "difficulty": "medium",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/product.md",
+          "data/docs/linux_commands_beginner.md",
+          "data/docs/product.md",
+          "data/docs/product.md",
+          "data/docs/fastapi.md"
+        ],
+        "keyword_hits": [
+          "协程",
+          "线程"
+        ],
+        "keyword_misses": [
+          "GIL"
+        ]
+      },
+      {
+        "question": "Python的asyncio事件循环是怎么工作的？",
+        "difficulty": "medium",
+        "hit_at": 4,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/fastapi.md",
+          "data/docs/redis.md",
+          "data/docs/fastapi.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [
+          "事件循环",
+          "await"
+        ],
+        "keyword_misses": [
+          "协程"
+        ]
+      },
+      {
+        "question": "部署一个Python后端服务到Docker，从写Dockerfile到docker-compose编排，完整流程是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md",
+          "data/docs/docker.md"
+        ],
+        "keyword_hits": [
+          "Dockerfile",
+          "docker-compose",
+          "端口映射",
+          "Volume"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis做分布式锁时，如果持有锁的进程崩溃了怎么办？WatchDog机制是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "过期时间",
+          "WatchDog",
+          "续期"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "数据库事务的四个隔离级别分别解决了什么问题？各自有什么代价？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/redis.md",
+          "data/docs/database.md"
+        ],
+        "keyword_hits": [
+          "脏读",
+          "不可重复读",
+          "幻读",
+          "SERIALIZABLE"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "在RAG系统中，embedding存储应该选择什么方案？pgvector和专用向量库各有什么优劣？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": true,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [
+          "pgvector",
+          "向量"
+        ],
+        "keyword_misses": []
+      },
+      {
+        "question": "Redis Cluster的数据分片原理是什么？",
+        "difficulty": "hard",
+        "hit_at": 1,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": [
+          "哈希槽",
+          "16384",
+          "分片"
+        ]
+      },
+      {
+        "question": "Rust的所有权机制是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/product.md",
+          "data/docs/product.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "GraphQL和REST有什么区别？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/database.md",
+          "data/docs/product.md",
+          "data/docs/database.md",
+          "data/docs/database.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
+        "keyword_misses": []
+      },
+      {
+        "question": "Kafka的消费者组是怎么工作的？",
+        "difficulty": "negative",
+        "hit_at": null,
+        "grounded": false,
+        "returned_sources": [
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md",
+          "data/docs/redis.md"
+        ],
+        "keyword_hits": [],
         "keyword_misses": []
       }
     ]
